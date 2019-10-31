@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="ZorkishBuild" Language="1033" Version="1.0.0.0" Manufacturer="Richard Alysandratos" UpgradeCode="91adc2b8-bcbf-4867-858b-665236b10566">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="ZorkishBuild" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="ZorkishBuild" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="Zorkish_v3.exe" Guid="5484F4F0-6A7B-4372-84CB-9C66380B82C4">
+        <File Id="Zorkish_v3.exe" Name="Zorkish_v3.exe" Source="$(var.Zorkish_v3.TargetDir)Zorkish_v3.exe"></File>
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

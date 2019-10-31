@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="RoboNav" Language="1033" Version="1.0.0.0" Manufacturer="Richard Alysandratos" UpgradeCode="fd9865e9-84f7-44ea-84b1-4a0499cc1b24">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="RoboNav" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="RoboNav" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="RobotNavigation.exe" Guid="5484F4F0-6A7B-4372-84CB-9C66380B82C4">
+        <File Id="RobotNavigation.exe" Name="RobotNavigation.exe" Source="$(var.RobotNavigation.TargetDir)RobotNavigation.exe"></File>
+      </Component>
+      <Component Id="PriorityQueue.dll" Guid="F7D2AEC2-5588-4CAA-A6A0-80015CE9D640">
+        <File Id="PriorityQueue.dll" Name="PriorityQueue.dll" Source="$(var.PriorityQueue.TargetDir)PriorityQueue.dll"></File>
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

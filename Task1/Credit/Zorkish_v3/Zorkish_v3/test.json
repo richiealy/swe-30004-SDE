@@ -1,0 +1,77 @@
+{
+
+  "locations": [
+    {
+      "name": "start",
+      "description": "Entrance",
+      "inventory": [
+        { "bag": "start bag" }
+      ]
+    },
+    {
+      "name": "swag",
+      "description": "Swag",
+      "inventory": [
+        { "bag": "swag bag" }
+      ]
+    },
+    {
+      "name": "swag monster",
+      "description": "A swaggy monster"
+    },
+    {
+      "name": "end",
+      "description": "End of map"
+    }
+  ],
+
+  "paths": [
+    {
+      "location1": "start",
+      "location2": "swag",
+      "direction1": "north",
+      "direction2": "south"
+    },
+    {
+      "location1": "swag",
+      "location2": "swag monster",
+      "direction1": "north",
+      "direction2": "south"
+    },
+    {
+      "location1": "swag monster",
+      "location2": "end",
+      "direction1": "north",
+      "direction2": "south"
+    }
+  ],
+
+  "player": {
+    "inventory": [
+      { "bag": "swagbag" }
+    ],
+    "location": "start"
+  },
+
+  "items": [
+    {
+      "name": "swag",
+      "description": "swag item"
+    },
+    {
+      "name": "swag2",
+      "description": "swag item2"
+    }
+  ],
+
+  "bags": [
+    {
+      "name": "swagbag",
+      "description": "to store swag",
+      "inventory": [
+        { "item": "swag" },
+        { "item": "swag2"}
+      ]
+    }
+  ]
+} 
